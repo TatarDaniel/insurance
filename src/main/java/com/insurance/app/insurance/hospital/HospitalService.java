@@ -28,7 +28,7 @@ public class HospitalService {
     }
 
     public List<Hospital> getHospitalBySpecialization(String specialization) {
-        ;
+
         return hospitalRepository.findHospitalBySpecialization_Name(specialization);
     }
 }
