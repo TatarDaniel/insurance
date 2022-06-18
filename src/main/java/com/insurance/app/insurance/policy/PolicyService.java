@@ -15,7 +15,6 @@ public class PolicyService {
     public List<Policy> getPolicies(){
         return policyRepository.findAll();
     }
-
     public List<Policy> getPolicyBySpecialization(String specialization){
         return policyRepository.findPolicyBySpecialization_Name(specialization);
     }
