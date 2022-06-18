@@ -26,4 +26,9 @@ public class HospitalController {
     public void addHospital(@RequestBody Hospital hospital){
         hospitalService.addHospital(hospital);
     }
+
+    @GetMapping("/list/{specialization}")
+    public List<Hospital> getHospitalBySpecialization(@PathVariable String specialization){
+        return hospitalService.getHospitalBySpecialization(specialization);
+    }
 }
