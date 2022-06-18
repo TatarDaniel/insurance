@@ -2,6 +2,7 @@ package com.insurance.app.insurance.specialization;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.insurance.app.insurance.hospital.Hospital;
+import com.insurance.app.insurance.policy.Policy;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,5 +43,14 @@ public class Specialization {
             mappedBy = "specialization")
     @JsonIgnore
     private List<Hospital> hospital;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "specialization")
+    @JsonIgnore
+    private List<Policy> policies;
 
 }
