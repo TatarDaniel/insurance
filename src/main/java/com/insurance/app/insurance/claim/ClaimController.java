@@ -35,7 +35,7 @@ public class ClaimController {
     }
 
 //    @CrossOrigin(origins = "http://localhost:3000/")
-    @GetMapping("/list/{specialization}")
+//    @GetMapping("/list/{specialization}")
 //    public List<Claim> getHospitalBySpecialization(@PathVariable String specialization){
 //        return claimService.getHospitalBySpecialization(specialization);
 //    }
