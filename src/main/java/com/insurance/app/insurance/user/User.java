@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Getter
@@ -31,9 +32,16 @@ public class User {
     private String name;
     private String surname;
     @Transient
-    private int age;
+    private Integer age;
     private LocalDate dob;
     private String email;
+    private String phone;
+    private String personalCode;
+    private String password;
+
+    public Integer getAge() {
+        return Period.between(this.dob, LocalDate.now()).getYears();
+    }
 
     @Override
     public String toString() {
