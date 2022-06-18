@@ -1,5 +1,6 @@
 package com.insurance.app.insurance.comment;
 
+import com.insurance.app.insurance.claim.Claim;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,5 +25,11 @@ public class CommentController {
     @PostMapping("/add")
     public void addComment(@RequestBody Comment comment){
         commentService.addComment(comment);
+    }
+
+
+    @GetMapping("/list/{user}")
+    public List<Comment> getCommentsByUser(@PathVariable long user){
+        return commentService.getCommentsByUser(user);
     }
 }

@@ -36,4 +36,8 @@ public class Claim {
     private Double amount;
     private ClaimStatus claim_status = ClaimStatus.TO_BE_REVIEWED; //todo set default
     private String claimData;
+
+
+
+
 }

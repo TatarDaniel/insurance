@@ -32,6 +32,10 @@ public class ClaimService {
         claimRepository.save(claim);
     }
 
+    public List<Claim> getClaimByUser(long user) {
+        return claimRepository.getClaimByUser(user);
+    }
+
 //    public List<Claim> getHospitalBySpecialization(String specialization){;
 //        return claimRepository.findHospitalBySpecialization_Name(specialization);
 //    }

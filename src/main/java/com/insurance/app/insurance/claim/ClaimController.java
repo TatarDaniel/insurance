@@ -1,5 +1,6 @@
 package com.insurance.app.insurance.claim;
 
+import com.insurance.app.insurance.hospital.Hospital;
 import com.insurance.app.insurance.hospital.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,12 @@ public class ClaimController {
     @GetMapping("/list")
     public List<Claim> getAll() {
         return claimService.getAll();
+    }
+
+
+    @GetMapping("/list/{user}")
+    public List<Claim> getClaimByUser(@PathVariable long user){
+        return claimService.getClaimByUser(user);
     }
 
     @PostMapping("/add")

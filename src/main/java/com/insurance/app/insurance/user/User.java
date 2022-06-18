@@ -1,5 +1,7 @@
 package com.insurance.app.insurance.user;
 
+import com.insurance.app.insurance.claim.Claim;
+import com.insurance.app.insurance.hospital.Hospital;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +10,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 
 @Entity
 @Getter
@@ -53,4 +56,36 @@ public class User {
                 ", email='" + email + '\'' +
                 '}';
     }
+
+
+
+    // claims by user
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinTable(
+            name = "user_claim",
+            joinColumns = {@JoinColumn(name = "id")}
+    )
+    private List<Claim> claims;
+
+
+
+    // comments on claim
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinTable(
+            name = "claim_comments",
+            joinColumns = {@JoinColumn(name = "id")}
+    )
+    private List<Claim> comments;
 }

@@ -1,5 +1,6 @@
 package com.insurance.app.insurance.comment;
 
+import com.insurance.app.insurance.claim.Claim;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,4 +24,7 @@ public class CommentService {
         commentRepository.save(comment);
     }
 
+    public List<Comment> getCommentsByUser(long user) {
+        return commentRepository.getCommentsByUser(user);
+    }
 }
