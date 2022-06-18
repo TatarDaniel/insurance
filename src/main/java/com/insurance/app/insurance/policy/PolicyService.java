@@ -8,14 +8,15 @@ import java.util.List;
 public class PolicyService {
     private final PolicyRepository policyRepository;
 
-    public PolicyService(PolicyRepository policyRepository){
+    public PolicyService(PolicyRepository policyRepository) {
         this.policyRepository = policyRepository;
     }
 
-    public List<Policy> getPolicies(){
+    public List<Policy> getPolicies() {
         return policyRepository.findAll();
     }
-    public List<Policy> getPolicyBySpecialization(String specialization){
+
+    public List<Policy> getPolicyBySpecialization(String specialization) {
         return policyRepository.findPolicyBySpecialization_Name(specialization);
     }
 }

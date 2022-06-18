@@ -29,8 +29,8 @@ public class Policy {
                     CascadeType.MERGE
             })
     @JoinTable(name = "policy_coverage_specialization",
-            joinColumns = { @JoinColumn(name = "policy_id") },
-            inverseJoinColumns = { @JoinColumn(name = "specialization_id") })
+            joinColumns = {@JoinColumn(name = "policy_id")},
+            inverseJoinColumns = {@JoinColumn(name = "specialization_id")})
     private List<Specialization> specialization;
 
 }

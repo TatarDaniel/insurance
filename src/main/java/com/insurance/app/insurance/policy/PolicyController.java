@@ -11,17 +11,19 @@ public class PolicyController {
     private final PolicyService policyService;
 
     @Autowired
-    public PolicyController(PolicyService policyService){
+    public PolicyController(PolicyService policyService) {
         this.policyService = policyService;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping("/list")
-    public List<Policy> getPolicies(){
+    public List<Policy> getPolicies() {
         return policyService.getPolicies();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping("/list/{specialization}")
-    public List<Policy> getPoliciesBySpecialization(@PathVariable String specialization){
+    public List<Policy> getPoliciesBySpecialization(@PathVariable String specialization) {
         return policyService.getPolicyBySpecialization(specialization);
     }
 }

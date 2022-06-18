@@ -1,6 +1,5 @@
 package com.insurance.app.insurance.comment;
 
-import com.insurance.app.insurance.claim.Claim;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
