@@ -11,4 +11,6 @@ public interface SpecializationRepository extends JpaRepository<Specialization, 
     //Optional<Specialization> getSpecializationByName(String name);
     List<Specialization> getSpecializationByName(String name);
     List<Specialization> getByName(String name);
+
+    List<Specialization> getSpecializationByCategory(String category);
 }

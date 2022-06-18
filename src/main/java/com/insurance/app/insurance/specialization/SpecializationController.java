@@ -29,6 +29,12 @@ public class SpecializationController {
         return specializationService.getSpecializationsByName(name);
     }
 
+    @GetMapping("/list/category/{category}")
+    @ResponseBody
+    public List<Specialization> getSpecializationsByCategory(@PathVariable String category){
+        return specializationService.getSpecializationsByCategory(category);
+    }
+
     @PostMapping("/add")
     public void addSpecialization(@RequestBody Specialization specialization){
         specializationService.addSpecialization(specialization);
