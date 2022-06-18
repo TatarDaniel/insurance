@@ -28,4 +28,8 @@ public class SpecializationService {
     public List<Specialization> getSpecializationsByName(String name){
         return specializationRepository.getSpecializationByName(name);
     }
+
+    public List<Specialization> getSpecializationsByCategory(String category) {
+        return specializationRepository.getSpecializationByCategory(category);
+    }
 }
