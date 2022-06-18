@@ -20,7 +20,7 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public void addNewUser(@RequestBody User user) {
+    public void addUser(@RequestBody User user) {
         userService.addUser(user);
     }
 
