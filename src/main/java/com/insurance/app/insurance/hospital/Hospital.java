@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "hospital")
@@ -39,7 +37,7 @@ public class Hospital {
                     CascadeType.MERGE
             })
     @JoinTable(name = "hospital_specialization",
-            joinColumns = { @JoinColumn(name = "hospital_id") },
-            inverseJoinColumns = { @JoinColumn(name = "specialization_id") })
+            joinColumns = {@JoinColumn(name = "hospital_id")},
+            inverseJoinColumns = {@JoinColumn(name = "specialization_id")})
     private List<Specialization> specialization;
 }
