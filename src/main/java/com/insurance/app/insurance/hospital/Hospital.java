@@ -30,13 +30,17 @@ public class Hospital {
     private Long hospital_id;
     private String name;
     private String address;
+    private String addressName;
 
-    @ManyToMany(fetch = FetchType.LAZY,
+
+    @ManyToMany(
+            fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
             })
-    @JoinTable(name = "hospital_specialization",
+    @JoinTable(
+            name = "hospital_specialization",
             joinColumns = {@JoinColumn(name = "hospital_id")},
             inverseJoinColumns = {@JoinColumn(name = "specialization_id")})
     private List<Specialization> specialization;

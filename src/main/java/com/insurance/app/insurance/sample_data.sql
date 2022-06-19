@@ -1,8 +1,8 @@
 INSERT INTO hospital
-VALUES (1, 'Strada Ciheiului', 'Pelican'),
-       (2, 'Strada Maria', 'Maria'),
-       (3, 'Strada Universitatii', 'DentMed'),
-       (4, 'Strada Chisinaului', 'MedPark');
+VALUES (1, '56.95666811940647, 24.116149176363802','Strada Ciheiului', 'Pelican'),
+       (2, '15.95666811940647, 13.116149176363802','Strada Maria', 'Maria'),
+       (3, '15.95666811940647, 24.116149176363802','Strada Universitatii', 'DentMed'),
+       (4, '56.95036358383003, 24.10769315915534','Strada Chisinaului', 'MedPark');
 
 INSERT INTO specialization
 VALUES (1, 'Neurology', 'Child neurology'),
@@ -99,6 +99,6 @@ insert into disease values (6,'hereditary', 'Cystic fibrosis');
 
 
 
-insert into branch values (1,'Main branch','56.951827269189984, 24.07952050817991');
-insert into branch values (2,'Second branch','56.95117561830236, 24.117341287158457');
-insert into branch values (3,'Moldova branch','47.08112301373525, 28.76910448980739');
+insert into branch values (1,'Main branch','56.951827269189984, 24.07952050817991','Sunset lane');
+insert into branch values (2,'Second branch','56.95117561830236, 24.117341287158457','Freedom boulevard');
+insert into branch values (3,'Moldova branch','47.08112301373525, 28.76910448980739','React cul-de-sac');

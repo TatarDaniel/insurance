@@ -29,6 +29,7 @@ public class Branch {
 
     private String name;
     private String address;
+    private String addressName;
 
 //    @ManyToMany(fetch = FetchType.LAZY,
 //            cascade = {
