@@ -1,7 +1,6 @@
 package com.insurance.app.insurance.user;
 
 import com.insurance.app.insurance.claim.Claim;
-import com.insurance.app.insurance.hospital.Hospital;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name="users")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
@@ -58,7 +57,6 @@ public class User {
     }
 
 
-
     // claims by user
     @OneToMany(
             fetch = FetchType.LAZY,
@@ -72,7 +70,6 @@ public class User {
             joinColumns = {@JoinColumn(name = "id")}
     )
     private List<Claim> claims;
-
 
 
     // comments on claim

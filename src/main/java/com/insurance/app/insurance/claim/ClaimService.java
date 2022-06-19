@@ -1,6 +1,5 @@
 package com.insurance.app.insurance.claim;
 
-import com.insurance.app.insurance.specialization.SpecializationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,7 @@ public class ClaimService {
 
 
     @Autowired
-    public ClaimService(ClaimRepository claimRepository ) {
+    public ClaimService(ClaimRepository claimRepository) {
         this.claimRepository = claimRepository;
     }
 
@@ -24,11 +23,11 @@ public class ClaimService {
 //        this.specializationRepository = specializationRepository;
 //    }
 
-    public List<Claim> getAll(){
+    public List<Claim> getAll() {
         return claimRepository.findAll();
     }
 
-    public void addClaim(Claim claim){
+    public void addClaim(Claim claim) {
         claimRepository.save(claim);
     }
 

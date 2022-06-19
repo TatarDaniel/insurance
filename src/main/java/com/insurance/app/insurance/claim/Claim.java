@@ -1,6 +1,5 @@
 package com.insurance.app.insurance.claim;
 
-import com.insurance.app.insurance.specialization.Specialization;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "claim")
@@ -36,8 +34,6 @@ public class Claim {
     private Double amount;
     private ClaimStatus claim_status = ClaimStatus.TO_BE_REVIEWED; //todo set default
     private String claimData;
-
-
 
 
 }

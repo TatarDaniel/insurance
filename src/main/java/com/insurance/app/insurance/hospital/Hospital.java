@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "hospital")
@@ -32,14 +30,18 @@ public class Hospital {
     private Long hospital_id;
     private String name;
     private String address;
+    private String addressName;
 
-    @ManyToMany(fetch = FetchType.LAZY,
+
+    @ManyToMany(
+            fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
             })
-    @JoinTable(name = "hospital_specialization",
-            joinColumns = { @JoinColumn(name = "hospital_id") },
-            inverseJoinColumns = { @JoinColumn(name = "specialization_id") })
+    @JoinTable(
+            name = "hospital_specialization",
+            joinColumns = {@JoinColumn(name = "hospital_id")},
+            inverseJoinColumns = {@JoinColumn(name = "specialization_id")})
     private List<Specialization> specialization;
 }
