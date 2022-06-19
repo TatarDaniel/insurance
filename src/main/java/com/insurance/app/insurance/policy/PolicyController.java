@@ -26,4 +26,12 @@ public class PolicyController {
     public List<Policy> getPoliciesBySpecialization(@PathVariable String specialization) {
         return policyService.getPolicyBySpecialization(specialization);
     }
+
+    @CrossOrigin(origins = "http://localhost:3000/")
+    @GetMapping("/list/hospitals/{hospital}")
+    public List<Policy> getPoliciesByHospital(@PathVariable String hospital) {
+        return policyService.getPolicyByHospital(hospital);
+    }
+
+
 }

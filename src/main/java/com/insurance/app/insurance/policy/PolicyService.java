@@ -19,4 +19,8 @@ public class PolicyService {
     public List<Policy> getPolicyBySpecialization(String specialization) {
         return policyRepository.findPolicyBySpecialization_Name(specialization);
     }
+
+    public List<Policy> getPolicyByHospital(String hospital) {
+        return policyRepository.findPolicyByHospital_Name(hospital);
+    }
 }

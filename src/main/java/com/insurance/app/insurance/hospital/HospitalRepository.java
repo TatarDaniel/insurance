@@ -10,5 +10,5 @@ public interface HospitalRepository extends JpaRepository<Hospital, Long> {
 //    @Query("SELECT h from Hospital h join Specialization s where s.name = :name")
 //    List<Hospital> findBySpecializationName(@Param("name") String name);
 
-    List<Hospital> findHospitalBySpecialization_Name(String specialization);
+    List<Hospital> findHospitalBySpecialization_Category(String specialization);
 }

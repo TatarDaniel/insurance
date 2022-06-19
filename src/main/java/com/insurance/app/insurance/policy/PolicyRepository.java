@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface PolicyRepository extends JpaRepository<Policy, Long> {
     List<Policy> findPolicyBySpecialization_Name(String specialization);
+    List<Policy> findPolicyByHospital_Name(String hospital);
 }

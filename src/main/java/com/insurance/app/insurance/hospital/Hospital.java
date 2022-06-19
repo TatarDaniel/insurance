@@ -1,5 +1,7 @@
 package com.insurance.app.insurance.hospital;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.insurance.app.insurance.policy.Policy;
 import com.insurance.app.insurance.specialization.Specialization;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,4 +46,15 @@ public class Hospital {
             joinColumns = {@JoinColumn(name = "hospital_id")},
             inverseJoinColumns = {@JoinColumn(name = "specialization_id")})
     private List<Specialization> specialization;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "hospital")
+    @JsonIgnore
+    private List<Policy> policies;
+
+
 }
