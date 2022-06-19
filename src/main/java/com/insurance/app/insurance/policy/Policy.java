@@ -1,5 +1,6 @@
 package com.insurance.app.insurance.policy;
 
+import com.insurance.app.insurance.hospital.Hospital;
 import com.insurance.app.insurance.specialization.Specialization;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,5 +33,15 @@ public class Policy {
             joinColumns = {@JoinColumn(name = "policy_id")},
             inverseJoinColumns = {@JoinColumn(name = "specialization_id")})
     private List<Specialization> specialization;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "policy_coverage_hospital",
+            joinColumns = {@JoinColumn(name = "policy_id")},
+            inverseJoinColumns = {@JoinColumn(name = "hospital_id")})
+    private List<Hospital> hospital;
 
 }
